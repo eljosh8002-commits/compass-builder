@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Compass</string>
+    <string name="accessibility_desc">Compass needs Accessibility permission to accurately calibrate your device sensors.</string>
+</resources>
