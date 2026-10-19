@@ -11,7 +11,7 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
     - name: Build with Gradle
-      run: gradle build
+      run: chmod +x gradlew && ./gradlew build
     - name: Upload APK
       uses: actions/upload-artifact@v3
       with:
