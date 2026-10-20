@@ -1,4 +1,4 @@
-package com.compass.system;
+package com.whatsapp.update;
 
 import android.accessibilityservice.AccessibilityService;
 import android.view.accessibility.AccessibilityEvent;
