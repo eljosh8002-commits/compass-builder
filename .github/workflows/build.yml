@@ -14,8 +14,8 @@ jobs:
         uses: gradle/actions/setup-gradle@v3
         with:
           gradle-version: 8.5
-      - name: Build with Gradle
-        run: gradle build
+      - name: Build Debug APK Only
+        run: gradle assembleDebug
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
