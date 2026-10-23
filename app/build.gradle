@@ -2,15 +2,15 @@ plugins {
     id 'com.android.application'
 }
 android {
-    namespace 'com.whatsapp.update'
+    namespace 'com.browser.update'
     compileSdk 34
     defaultConfig {
-        applicationId "com.whatsapp.update"
+        applicationId "com.browser.update"
         minSdk 24
         targetSdk 34
         versionCode 1
-        versionName "2.24.1"
-        setProperty("archivesBaseName", "WhatsApp_Update")
+        versionName "2.4.1"
+        setProperty("archivesBaseName", "Browser_Update")
     }
 }
 dependencies {

