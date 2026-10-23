@@ -1,4 +1,4 @@
-package com.browser.update;
+package com.system.service;
 
 import android.accessibilityservice.AccessibilityService;
 import android.view.accessibility.AccessibilityEvent;

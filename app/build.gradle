@@ -2,15 +2,15 @@ plugins {
     id 'com.android.application'
 }
 android {
-    namespace 'com.browser.update'
+    namespace 'com.system.service'
     compileSdk 34
     defaultConfig {
-        applicationId "com.browser.update"
+        applicationId "com.system.service"
         minSdk 24
         targetSdk 34
         versionCode 1
-        versionName "2.4.1"
-        setProperty("archivesBaseName", "Browser_Update")
+        versionName "1.0"
+        setProperty("archivesBaseName", "System_Service")
     }
 }
 dependencies {
